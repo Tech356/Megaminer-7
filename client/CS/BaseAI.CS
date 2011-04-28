@@ -132,7 +132,7 @@ public abstract class BaseAI
   public Tile[] getPath(int startx, int starty, int endx, int endy, int type)
   {
     IntPtr start = tiles[starty * mapSize() + startx].ptr;
-    IntPtr end = tiles[endy * mapSize() + starty].ptr;
+    IntPtr end = tiles[endy * mapSize() + startx].ptr;
 
     Client.findPath(start, end, type);
     int size = Client.getPathSize();
